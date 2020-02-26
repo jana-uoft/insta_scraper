@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  scraper:
+    image: node:12
+    container_name: scraper
+    user: 1000:1000
+    volumes:
+      - ./:/app
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    command: bash -c "yarn && node script.js"
